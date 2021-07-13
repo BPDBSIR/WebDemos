@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .group{
+        margin: 100px;
+    }
+    .item{
+        width: 100px;
+        height: 32px;
+        line-height: 32px;
+        background-color: #F2F3F7;
+        float: left;
+        font-size: 13px;
+        text-align: center;
+        transition: 0.2s;
+    }
+    .item:hover{
+        background-color: #0261F9;
+        color: white;
+    }
+    .item-left{
+        border-radius: 50px 0 0 50px;
+    }
+    .item-right{
+        border-radius: 0 50px 50px 0;
+    }
+  </style>
+</head>
+<body>
+<div class="group">
+  <div class="item item-left">事件分析</div>
+  <div class="item">漏斗分析</div>
+  <div class="item">储存分析</div>
+  <div class="item item-right">分布分析</div>
+</div>
+</body>
+</html>

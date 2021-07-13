@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link
+          rel="stylesheet"
+          href="css/animate.min.css"
+  />
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+
+    }
+    .header{
+        width: 100%;
+        height: 100vh;
+        background-image: url("img/bg.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: all 0.5s;
+        background-attachment: fixed;
+        font-size: 14px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  </style>
+</head>
+<body class="">
+<header class="header">
+  <h2 class="" style="font-size: 3rem">Kylin</h2>
+</header>
+<script src="js/jquery.js"></script>
+<script>
+  $(document).ready(function (){
+    $("body").fadeIn("slow")
+  })
+</script>
+</body>
+</html>

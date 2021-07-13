@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+      #main{
+          width: 100%;
+          margin: 0 auto;
+      }
+      .item{
+
+          overflow: hidden;
+          display: inline-block;
+      }
+      .card{
+          display: inline-block;
+          border-radius: 4px;
+          width: 400px;
+          height: 250px;
+          background-color: rebeccapurple;
+          background-position: center center;
+          background-size: cover;
+          transition: all ease-in-out .6s;
+      }
+      .item:hover .card{
+          transform: rotateY(180deg);
+      }
+  </style>
+</head>
+<body>
+<div id="main">
+  <div class="item">
+    <div class="card" style="background-image: url('https://cdn.jsdelivr.net/gh/SerokSSR/atdawn.tk@latest/algorithm/dp/cover.jpg')">
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

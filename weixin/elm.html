@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        cursor: url("img/default.cur"),default;
+        background-color: black;
+    }
+    ul{
+        list-style-type: none;
+    }
+    .access{
+        margin-top: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .access ul li{
+        float: left;
+        height: 400px;
+        width: 130px;
+        background-color: #02B6FD;
+        border-radius: 8px;
+        margin-left: 40px;
+        opacity: 0.5;
+    }
+    .active{
+        opacity: 1 !important;
+    }
+  </style>
+</head>
+<body>
+<div class="access">
+  <ul>
+    <li style="width: 600px"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+  $(".access ul li").mouseover(function (){
+    $(this).stop().animate({width:600},100).siblings("li").stop().animate({width: 130},100)
+    $(".access ul li").eq($(this).index()).addClass("active").siblings(".access ul li").removeClass("active");
+  })
+</script>
+</body>
+</html>

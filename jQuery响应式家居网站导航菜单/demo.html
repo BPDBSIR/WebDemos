@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo</title>
+  <script src="js/jquery.min.js"></script>
+
+  <style>
+
+    .abc{
+        width: 100px;
+        height: 100px;
+        background-color: #3D7EFF;
+    }
+  </style>
+</head>
+<body>
+
+<button id="toggle">Toggle</button>
+<div class="abc"></div>
+<script>
+
+  $("#toggle").click(function (){
+    console.log("Hello WQorld")
+    // $(".abc").slideToggle(300)
+
+    $(".abc").fadeToggle("slow","linear");
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+    <span v-bind:title="message">鼠标悬停几秒查看次数动态绑定信息！</span>
+    <!--true显示false隐藏-->
+    <p v-if="seen">现在你看到我了</p>
+    <!--循环遍历数组-->
+    <ol>
+        <li v-for="book in books">
+            {{book.text}}
+        </li>
+    </ol>
+    <!--事件处理-->
+    <button v-on:click="reverseMessage">反转消息</button>
+    <!--双向数据绑定-->
+    <input v-model="message">
+
+    <ol>
+        <!--使用组件
+            先用for循环遍历books
+            然后绑定book的值为b
+        -->
+        <book-item v-for="b in books" v-bind:book="b"></book-item>
+    </ol>
+</div>
+<script>
+
+    /*创建组件*/
+    Vue.component('book-item',{
+        /*传值*/
+        props: ['book'],
+        /*将传入的值显示出来*/
+        template: '<li>{{book.text}}</li>'
+
+    })
+    /*数据对象*/
+    var data = { a: 1 }
+    var app = new Vue({
+        el: "#app",
+        data: {
+            message: "Hello Vue!",
+            seen: true,
+            books: [
+                { id: 1, text: "Java从入门到放弃"},
+                { id: 2, text: "Mysql从删裤到跑路"},
+                { id: 3, text: "Vue入门到弃坑"}
+            ],
+            data,
+        },
+        methods: {
+            reverseMessage: function (){
+                this.message = this.message.split('').reverse().join('')
+            }
+        },
+        /*created钩子可以用来在一个实例被创建之后执行代码*/
+        /*不要在选项 property 或回调上使用箭头函数*/
+        created: () => {
+            console.log('a is:' + this.message)
+        }
+    })
+
+    app.a = data.a
+
+</script>
+</body>
+</html>

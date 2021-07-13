@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UI中国头部</title>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: #eff3f5;
+    }
+    .header{
+        height:72px;
+        background-color: white;
+        /*box-shadow: 0 1px 4px #d7d7d7;*/
+    }
+    .container{
+        width: 1200px;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+    ul{
+        list-style-type: none;
+        display: inline-block;
+    }
+    .header .parent-ul{
+        height: 100%;
+    }
+    .header .parent-li{
+        height: 100%;
+        float: left;
+        width: 100px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: all .2s;
+        border: 1px solid white;
+    }
+    .header .parent-li:hover{
+        border-top: 4px solid #3D7EFF;
+        border-left: 1px solid #eff3f5;
+        border-right: 1px solid #eff3f5;
+    }
+    .header .parent-li:hover .son-ul{
+        display: block;
+    }
+    .header .son-ul{
+        background-color: white;
+        width: 150px;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        display: none;
+    }
+    .header .son-li a{
+        display: block;
+        height: 44px;
+        line-height: 44px;
+        padding-left: 20px;
+        transition: all .4s;
+    }
+    .header .son-li a:hover{
+        background-color: #eff3f5;
+        font-weight: bold;
+    }
+    a{
+        text-decoration: none;
+        color: #34495E;
+        font-size: 15px;
+    }
+    a:hover{
+        color: #3D7EFF;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <div class="header">
+    <div class="container">
+      <img style="width: 62px" src="img/ui_icon.png" alt="">
+      <ul class="parent-ul">
+        <li class="parent-li">
+          <a href="#">首页</a>
+        </li>
+        <li class="parent-li">
+          <a href="#">发现</a>
+          <ul class="son-ul">
+            <li class="son-li">
+              <a href="#">即刻</a>
+            </li>
+            <li class="son-li">
+              <a href="#">作品</a>
+            </li>
+            <li class="son-li">
+              <a href="#">文章</a>
+            </li>
+            <li class="son-li">
+              <a href="#">活动</a>
+            </li>
+            <li class="son-li">
+              <a href="#">设计大赛</a>
+            </li>
+            <li class="son-li">
+              <a href="#">设计团队</a>
+            </li>
+          </ul>
+        </li>
+        <li class="parent-li">
+          <a href="#">学习</a>
+          <ul class="son-ul">
+            <li class="son-li">
+              <a href="#">教程</a>
+            </li>
+            <li class="son-li">
+              <a href="#">专题</a>
+            </li>
+            <li class="son-li">
+              <a href="#">书籍</a>
+            </li>
+            <li class="son-li">
+              <a href="#">UTalk</a>
+            </li>
+            <li class="son-li">
+              <a href="#">每周临摹</a>
+            </li>
+            <li class="son-li">
+              <a href="#">工具</a>
+            </li>
+          </ul>
+        </li>
+        <li class="parent-li">
+          <a href="#">正版素材</a>
+        </li>
+        <li class="parent-li">
+          <a href="#">招聘</a>
+        </li>
+        <li class="parent-li">
+          <a href="#">榜单</a>
+        </li>
+        <li class="parent-li">
+          <a href="#">会员Plus</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

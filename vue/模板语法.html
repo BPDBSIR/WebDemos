@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板语法</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <span>Message: {{msg}}</span>
+    <span v-once>这个将不会被改变: {{msg}}</span>
+    <button v-bind:disabled="disable">Hello Vue</button>
+    <a v-bind:href="url">百度一下</a>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            msg: "Hello Vue!",
+            disable: false,
+            url: "https://www.baidu.com"
+        },
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>开眼短视频官网</title>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: green;
+    }
+    button{
+        border: none;
+        background: none;
+    }
+    button:focus{
+        outline: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    .top-screen{
+        height: 1080px;
+        background-color: red;
+        position: relative;
+        overflow: hidden;
+        display: none;
+    }
+    .top-screen .menu{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    .top-screen .menu .weixin,.weibo,.email{
+        height: 40px;
+        width: 40px;
+        background-image: url("./img/kaiyan_menu.png");
+        background-repeat: no-repeat;
+    }
+    .top-screen .menu .weixin{
+        background-size: 36px;
+        background-position: 0 -26px;
+    }
+    .top-screen .menu .weibo{
+        background-size: 36px;
+        background-position: 0 -63px;
+    }
+    .top-screen .menu .email{
+        background-size: 54px;
+        background-position: 0 0;
+    }
+    .top-screen .content{
+    }
+    .top-screen .content .logo,.intro{
+        background-image: url("./img/kaiyan_sucai.png");
+        background-repeat: no-repeat;
+    }
+    .top-screen .content .logo{
+        background-position: 0 81.02435%;
+        height: 150px;
+        top: 30%;
+    }
+    .top-screen .content .intro{
+        background-position: 0 69.09976%;
+        height: 54px;
+        top: 54%;
+    }
+    .top-screen .content .download-button-list{
+        height: 52px;
+    }
+    .top-screen .content .download-button-list .ios{
+        background-image: url("./img/kaiyan_sucai.png");
+        background-repeat: no-repeat;
+        background-position: 0 26.5966%;
+
+    }
+    .top-screen .content .download-button-list .android{
+        height: 52px;
+    }
+    .top-screen .video-container{
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+        top: 0;
+    }
+    .top-screen .video-container video{
+        height: 100%;
+        width: 100%;
+
+    }
+    .img-list{
+        width: 100%;
+    }
+    .img-list .img{
+        width: 100%;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 450px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .img-list .cover{
+        background: rgba(0,0,0,.4);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: background .6s;
+        z-index: 1;
+    }
+    .img-list .cover:hover{
+        background: rgba(0,0,0,0);
+    }
+    .img-list .title{
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        z-index: 2;
+    }
+  </style>
+</head>
+<body>
+<div class="top-screen">
+  <div class="menu">
+    <a href="#">
+      <button class="weixin"></button>
+    </a>
+    <a href="#">
+      <button class="weibo"></button>
+    </a>
+    <a href="#">
+      <button class="email"></button>
+    </a>
+  </div>
+  <div class="content">
+    <div class="logo"></div>
+    <div class="intro"></div>
+    <div class="download-button-list">
+      <div class="ios"></div>
+      <div class="android"></div>
+    </div>
+  </div>
+  <div class="video-container">
+    <video autoplay loop poster="//static.kaiyanapp.com/eyepetizer-web/assets/images/index/home_poster.43ddf261.jpg" src="./img/homepage.mp4"/>
+  </div>
+</div>
+<div class="img-list">
+  <div class="img" style="background-image: url('./img/kaiyan_img01.jpg')">
+    <div class="cover"></div>
+    <div class="title">看完这则广告，我也想养只小黑猫</div>
+  </div>
+  <div class="img" style="background-image: url('./img/kaiyan_img02.jpeg')">
+    <div class="cover"></div>
+    <div class="title">看完这则广告，我也想养只小黑猫</div></div>
+  <div class="img" style="background-image: url('./img/kaiyan_img03.jpeg')">
+    <div class="cover"></div>
+    <div class="title">看完这则广告，我也想养只小黑猫</div></div>
+</div>
+</body>
+</html>

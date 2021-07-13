@@ -1,0 +1,157 @@
+
+.show{
+    opacity: 1;
+    filter: none;
+}
+
+.hide_menu .menus_items{
+    display: none !important;
+    /*opacity: 0;*/
+}
+.hide_menu #toggle_menu {
+    display: inline-block !important;
+}
+
+#page_header.full_page{
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+#page_header{
+    position: relative;
+    width: 100%;
+    background-color: #bd0d2a;
+    background-position: center center;
+    background-size: cover;
+    transition: all 0.5s;
+}
+
+#nav{
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    font-size: 1.3rem;
+    transition: all 0.5s;
+    padding: 0 36px;
+}
+
+.blog_name{
+    flex: 1;
+}
+
+.blog_name .site_name{
+    text-shadow: 0.1rem 0.1rem 0.2rem rgb(0 0 0 / 15%);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#nav .menus{
+    padding-right: 0 !important;
+}
+
+#nav .menus .menus_items{
+    display: inline;
+}
+
+#nav .menus .menus_item{
+    display: inline-block;
+    position: relative;
+    padding: 0 0 0 0.7rem;
+}
+
+#toggle_menu{
+    display: none;
+}
+#nav .site_page{
+    position: relative;
+    /*font-size: 0.78rem;*/
+    font-size: 0.92rem;
+    text-shadow: 0.05rem 0.05rem 0.1rem rgb(0 0 0 / 30%);
+    padding-bottom: 0.3rem;
+    transition: all 0.3s ease-in-out;
+}
+
+#nav .site_page:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 0;
+    height: 3px;
+    background-color: #f13554;
+    transition: all 0.3s ease-in-out;
+}
+#nav .site_page:hover{
+    width: 60px;
+    color: #f13554;
+}
+
+
+#page_header.full_page #site_info{
+    position: absolute;
+    top: 43%;
+    padding: 0 0.5rem;
+    width: 100%;
+}
+
+#page_header #site_title{
+    color: white;
+    margin: 0;
+    text-align: center;
+    font-size: 2.85em;
+}
+#page_header #sub_subtitle{
+    font-size: 1.72rem;
+    color: #eee;
+    text-align: center;
+    text-shadow: 0.1rem 0.1rem 0.2rem rgb(0 0 0 / 15%);
+    line-height: 1.5;
+    font-family: "LCALLIG";
+}
+
+
+@media screen and (max-width: 768px) {
+    #page_header #sub_subtitle{
+        font-size: 1rem;
+    }
+}
+
+#scroll-down{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+#scroll-down .scroll-down-effects{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 900;
+    color: #eee;
+    text-rendering: auto;
+    animation: scroll-down-effect 1.5s infinite;
+}
+
+@keyframes scroll-down-effect {
+    0%{
+        top: 0;
+        opacity: 0.4;
+    }
+    50%{
+        top: -16px;
+        opacity: 1;
+        filter: none;
+    }
+    100%{
+        top: 0;
+        opacity: 0.4;
+    }
+}

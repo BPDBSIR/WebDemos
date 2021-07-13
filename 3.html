@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+	
+	<script>
+		function Person(){
+			this.name = "Bi Jizhuang",
+			this.age = 20
+		}
+		let person = new Person()
+		console.log(person)
+		updatePerson(person)
+		function updatePerson(p){
+			p.name = "update value"
+			console.log(p)
+		}
+		console.log(person)
+	</script>
+</body>
+</html>

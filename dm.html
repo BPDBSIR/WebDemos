@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p id="tv">在这里显示名字</p>
+<button id="btn">点击我</button>
+<script>
+  let tv = document.getElementById("tv")
+  let arr = ["黄宝", "张三", "李四", "王五"]
+  document.getElementById("btn").onclick = () => {
+    tv.innerText = arr[Math.floor(Math.random() * arr.length)]
+  }
+</script>
+</body>
+</html>

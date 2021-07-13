@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style-type: none;
+    }
+    .accordion{
+        height: 479px;
+        margin: 70px auto 50px;
+        color: #FFF;
+        position: relative;
+    }
+    .accordion ul{
+        width: 100%;
+    }
+    .accordion ul li{
+        width: 174px;
+        height: 680px;
+        position: relative;
+        float: left;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+    }
+    .selected .text-mask{
+        background-color: white;
+        opacity: 0;
+    }
+    .text-mask{
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.5;
+        z-index: 1;
+    }
+  </style>
+</head>
+<body>
+<div class="accordion">
+  <ul>
+    <li style="background-image: url('img/1.jpg')">
+      <div class="text-mask"></div>
+    </li>
+    <li style="background-image: url('img/2.jpg')">
+      <div class="text-mask"></div>
+    </li>
+    <li style="background-image: url('img/3.jpg')">
+      <div class="text-mask"></div>
+    </li>
+    <li style="background-image: url('img/4.jpg')">
+      <div class="text-mask"></div>
+    </li>
+    <li style="background-image: url('img/5.jpg')">
+      <div class="text-mask"></div>
+    </li>
+    <li style="background-image: url('img/6.jpg')">
+      <div class="text-mask"></div>
+    </li>
+  </ul>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+  $(document).ready(function (){
+    console.log("dom渲染完成")
+  })
+  $(".accordion ul li").mouseover(function(){
+    let _index = 0;
+    _index=$(this).index();
+    console.log(_index)
+    let size = $(".accordion ul li").length;
+    let width = $(window).width();
+    let slideWidth = width - 174 * (size - 1);
+    //$(this)表示取出当前this并转换为jquery的this
+    $(this).stop().animate({width:slideWidth},500).siblings("li").stop().animate({width:174},500);
+    $(".accordion ul li").eq(_index).addClass("selected").siblings(".accordion ul li").removeClass("selected");
+  });
+</script>
+</body>
+</html>

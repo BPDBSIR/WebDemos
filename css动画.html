@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #eee;
+    }
+    .container{
+        display: flex;
+    }
+    .container .btn{
+        overflow: hidden;
+        position: relative;
+        width: 90px;
+        height: 90px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 25px;
+        margin: 0 10px;
+        box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+    }
+    .container .fa{
+        font-size: 38px;
+        transform: scale(0.8);
+        line-height: 90px;
+        transition: all 0.4s cubic-bezier(0.31,-0.1,0.43,1.59);
+    }
+    .container .btn::before{
+        content: "";
+        position: absolute;
+        top: 90%;
+        left: -110%;
+        width: 120%;
+        height: 120%;
+        background-color: #000;
+        transform: rotate(45deg);
+        transition: all 0.4s cubic-bezier(0.31,-0.1,0.43,1.59);
+    }
+    .container .btn .fa-facebook{
+        color: #3d5988;
+    }
+    .container .btn_facebook::before{
+        background-color: #3d5988;
+    }
+    .container .btn .fa-twitter{
+        color: #00aff0;
+    }
+    .container .btn_twitter::before{
+        background-color: #00aff0;
+    }
+    .container .btn .fa-google{
+        color: #dc4a38;
+    }
+    .container .btn_google::before{
+        background-color: #dc4a38;
+    }
+    .container .btn .fa-instagram{
+        color: #bf00ff;
+    }
+    .container .btn_instagram::before{
+        background-color: #bf00ff;
+    }
+    .container .btn .fa-pinterest{
+        color: #c00;
+    }
+    .container .btn_pinterest::before{
+        background-color: #c00;
+    }
+    .container .btn:hover::before{
+        top: -10%;
+        left: -10%;
+    }
+    .container .btn:hover .fa{
+        color: #fff;
+        transform: scale(1);
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="javascript:void(0)" class="btn btn_facebook">
+    <i class="fa fa-facebook"></i>
+  </a>
+  <a href="javascript:void(0)" class="btn btn_twitter">
+    <i class="fa fa-twitter"></i>
+  </a>
+  <a href="javascript:void(0)" class="btn btn_google">
+    <i class="fa fa-google"></i>
+  </a>
+  <a href="javascript:void(0)" class="btn btn_instagram">
+    <i class="fa fa-instagram"></i>
+  </a>
+  <a href="javascript:void(0)" class="btn btn_pinterest">
+    <i class="fa fa-pinterest"></i>
+  </a>
+</div>
+</body>
+</html>

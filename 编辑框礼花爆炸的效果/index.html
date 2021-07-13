@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .container{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    input{
+        height: 82px;
+        width: 300px;
+        border: 2px solid #ccd4d9;
+        border-radius: 2px;
+        padding-left: 10px;
+    }
+    input:focus{
+        outline: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <input type="text" placeholder="在此输入你的内容">
+</div>
+<script src="activate-power-mode.js"></script>
+<script>
+  POWERMODE.colorful = true; // ture 为启用礼花特效
+  POWERMODE.shake = true; // false 为禁用震动特效
+  document.body.addEventListener('input', POWERMODE);
+</script>
+</body>
+</html>

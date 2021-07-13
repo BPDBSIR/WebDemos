@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-Demo</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+        <br>
+        <span v-bind:title="message">鼠标悬停此处几秒钟查看动态绑定的信息！</span><!--动态绑定属性-->
+        <p v-text="nowDate"></p><!--绑定文本到p标签内-->
+        <p v-if="seen">现在你看到我了</p><!--条件成立显示，不成立则隐藏-->
+        <ol>
+            <!--循环遍历todos-->
+            <li v-for="todo in todos">
+                {{ todo.text}}
+            </li>
+        </ol>
+        <button v-on:click="reverseMessage">反转消息</button>
+        <input type="text" v-model="message" placeholder="Vue数据双向绑定">
+
+        <ol>
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ol>
+        <el-input placeholder="内容"></el-input>
+
+        <div>
+            <el-row>
+                <el-button>默认按钮</el-button>
+                <el-button type="primary">主要按钮</el-button>
+                <el-button type="success">成功按钮</el-button>
+                <el-button type="info">信息按钮</el-button>
+                <el-button type="warning">警告按钮</el-button>
+                <el-button type="danger">危险按钮</el-button>
+            </el-row>
+
+            <el-row>
+                <el-button plain>朴素按钮</el-button>
+                <el-button type="primary" plain>主要按钮</el-button>
+                <el-button type="success" plain>成功按钮</el-button>
+                <el-button type="info" plain>信息按钮</el-button>
+                <el-button type="warning" plain>警告按钮</el-button>
+                <el-button type="danger" plain>危险按钮</el-button>
+            </el-row>
+
+            <el-row>
+                <el-button round>圆角按钮</el-button>
+                <el-button type="primary" round>主要按钮</el-button>
+                <el-button type="success" round>成功按钮</el-button>
+                <el-button type="info" round>信息按钮</el-button>
+                <el-button type="warning" round>警告按钮</el-button>
+                <el-button type="danger" round>危险按钮</el-button>
+            </el-row>
+
+            <el-row>
+                <el-button icon="el-icon-search" circle></el-button>
+                <el-button type="primary" icon="el-icon-edit" circle></el-button>
+                <el-button type="success" icon="el-icon-check" circle></el-button>
+                <el-button type="info" icon="el-icon-message" circle></el-button>
+                <el-button type="warning" icon="el-icon-star-off" circle></el-button>
+                <el-button type="danger" icon="el-icon-delete" circle></el-button>
+            </el-row>
+        </div>
+    </div>
+    <script>
+        Vue.component("todo-item",{
+            props: ['todo'],
+            template: "<li>{{ todo.text }}</li>"
+        })
+        app = new Vue({
+            el: "#app",
+            data: {
+                message: "Hello Vue!",
+                nowDate: "页面加载于:" + new Date().toLocaleString(),
+                seen: true,
+                todos: [
+                    { text: "学习JavaScript"},
+                    { text: "学习Vue"},
+                    { text: "学习Element-UI"},
+                ],
+                groceryList: [
+                    { id: 0,text: "蔬菜"},
+                    { id: 1,text: "奶酪"},
+                    { id: 2,text: "苹果"},
+                ]
+            },
+            methods:{
+                reverseMessage: function (){
+                    this.message = this.message.split('').reverse().join('')
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

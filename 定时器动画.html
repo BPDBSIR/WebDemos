@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+
+      #e{
+          width: 100px;
+          height: 100px;
+          background: red;
+          position: absolute;
+          left: 0;
+          top: 0;
+          zoom: 1;
+      }
+  </style>
+</head>
+<body>
+<div id="e"></div>
+<script>
+
+  const e = document.getElementById("e")
+  let flag = true
+  let left = 0
+  function render(){
+    if (flag){
+      if (left >= 400){
+        flag = false
+      }
+      e.style.left = `${left++}px`
+    }else {
+      if (left <= 0){
+        flag = true
+      }
+      e.style.left = `${left--}px`
+    }
+  }
+
+  /*setInterval(() => {
+    render()
+  },1000 / 60)*/
+
+  //改版
+  //requestAnimationFrame效果
+  (function animLoop() {
+    render();
+    window.requestAnimationFrame(animLoop);
+  })();
+
+</script>
+</body>
+</html>

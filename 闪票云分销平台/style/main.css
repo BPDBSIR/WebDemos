@@ -1,0 +1,230 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #F4F8FA;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    position: relative;
+    height: 1000px;
+    min-height: 100%;
+    min-width: 1200px;
+    background: #f4f8fa url("../img/login-bg.png") no-repeat;
+    background-size: 50%;
+    background-position-y: -100px;
+    background-position-x: right;
+}
+.header{
+    position: relative;
+    height: 98px;
+    line-height: 98px;
+    overflow: hidden;
+}
+
+.header .logo{
+    height: 56px;
+    margin-top: 30px;
+    margin-left: 41px;
+}
+
+.header .nav{
+    position: absolute;
+    right: 150px;
+    top: 0;
+    bottom: 0;
+}
+.header .nav a{
+    display: inline-block;
+    color: hsla(0,0%,100%,.85);
+    margin-left: 58px;
+    font-size: 14px;
+}
+
+.body{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 120px;
+}
+
+.body .name{
+    font-size: 52px;
+}
+
+.body .phone{
+    position: absolute;
+    width: 656px;
+    height: 475px;
+    top: 150px;
+    right: -200px;
+    z-index: 100;
+    animation: phone 1s ease 0s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes phone {
+    0%{
+        right: -1000px;
+    }
+    100%{
+        right: -200px;
+    }
+}
+.body .bi{
+    position: absolute;
+    width: 286px;
+    height: 187px;
+    right: 120px;
+    top: 400px;
+    z-index: 99;
+    opacity: 0;
+    animation: bi 1s ease 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bi {
+    0%{
+        right: 0;
+        top: 200px;
+        opacity: 0;
+    }
+    100%{
+        right: 54px;
+        top: 453px;
+        opacity: 1;
+    }
+}
+
+.body .item-book{
+    position: absolute;
+    opacity: 0;
+    width: 250px;
+    height: 125px;
+    box-shadow: -24px 15px 50px rgb(0 0 0 / 20%);
+    transform: perspective(0) rotateY(0deg) rotateX(52deg) rotate(-47deg);
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.body .item01{
+    top: 225px;
+    right: -10px;
+    z-index: 101;
+    animation-name: item01;
+    animation-delay: 1s;
+}
+
+@keyframes item01 {
+    0%{
+        top: 300px;
+        right: -500px;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.body .item02{
+    top: 290px;
+    right: 160px;
+    z-index: 102;
+    animation-name: item02;
+    animation-delay: 1s;
+}
+
+@keyframes item02 {
+    0%{
+        top: 500px;
+        right: 400px;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.body .item03{
+    top: 150px;
+    right: 82px;
+    z-index: 103;
+    animation-name: item03;
+    animation-delay: 1s;
+}
+
+
+@keyframes item03 {
+    0%{
+        top: 50px;
+        right: -500px;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.body .item04{
+    top: 225px;
+    right: -10px;
+    z-index: 101;
+    animation-name: item04;
+    animation-delay: 3s;
+}
+
+@keyframes item04 {
+    0%{
+        top: 300px;
+        right: -500px;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.body .item05{
+    top: 290px;
+    right: 160px;
+    z-index: 102;
+    animation-name: item05;
+    animation-delay: 3s;
+}
+
+@keyframes item05 {
+    0%{
+        top: 500px;
+        right: 400px;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.body .item06{
+    top: 150px;
+    right: 82px;
+    z-index: 103;
+    animation-name: item06;
+    animation-delay: 3s;
+}
+
+
+@keyframes item06 {
+    0%{
+        top: 50px;
+        right: -500px;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
