@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>高德地图</title>
+  <style>
+    html,body{
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    #container{
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<div id="container"></div>
+<button style="position: absolute;top: 0" onclick="map.remove(marker)">移除标记</button>
+<script>
+  let map;
+  let marker;
+  let marker2
+  let marker3
+  window.onLoad  = function(){
+    map = new AMap.Map('container',{
+      zoom:11,//级别
+      center: [116.397428, 39.90923],//中心点坐标
+      // viewMode:'3D'//使用3D视图
+    });
+    marker = new AMap.Marker({
+      position:[116.39, 39.9]
+    })
+    marker2 = new AMap.Marker({
+      position: [116.397428, 39.90923]
+    });
+    marker3 = new AMap.Marker({
+      position: [115.412595, 32.501061]
+    });
+    map.add(marker);
+    map.add(marker2)
+    map.add(marker3)
+  }
+  let url = 'https://webapi.amap.com/maps?v=1.4.15&key=0603ac95b2a5f364c17fe87cfd6cb0da&callback=onLoad';
+  let jsapi = document.createElement('script');
+  jsapi.charset = 'utf-8';
+  jsapi.src = url;
+  document.head.appendChild(jsapi);
+</script>
+</body>
+</html>
