@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script type="text/javascript" src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
+
+<script>
+  let qs = Qs
+  let person = {
+    name: "Andrew",
+    age: 20,
+    email: "468504329@qq.com"
+  }
+  let res = qs.stringify(person)
+  console.log(res)
+  let urlCode = "name=Andrew&age=20&email=468504329%40qq.com";
+  let res2 = qs.parse(urlCode)
+  console.log(res2)
+</script>
+</body>
+</html>
