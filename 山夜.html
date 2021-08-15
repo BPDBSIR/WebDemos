@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>山夜</title>
+    <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <style>
+      :root {
+        --clr1-dark: #240940;
+        --clr1: #3e0f6d;
+        --clr1-light: #57159a;
+        --clr2-dark: #010327;
+        --clr2: #020659;
+        --clr2-light: #030a8b;
+        --clr3-dark: #00010e;
+        --clr3: #010440;
+        --clr3-light: #020772;
+        --clr4-dark: #1571ab;
+        --clr4: #1a90d9;
+        --clr4-light: #3ea7e8;
+      }
+
+      *,
+      html,
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: radial-gradient(circle at 0 0, var(--clr3), var(--clr2));
+        display: grid;
+        height: 100vh;
+        place-items: center;
+      }
+
+      #pstr {
+        background: radial-gradient(circle at 0 0, var(--clr2-dark), var(--clr3-light));
+        border-radius: 3vmin;
+        box-shadow: 0 16vmin 24vmin -4vmin var(--clr4-dark);
+        height: 75vmin;
+        overflow: hidden;
+        position: relative;
+        width: 75vmin;
+      }
+
+      #star {
+        height: 75vmin;
+        position: absolute;
+        width: 75vmin;
+        /* mix-blend-mode: overlay; */
+        z-index: 0;
+      }
+
+      #star>* {
+        border-radius: 100%;
+        position: absolute;
+      }
+
+      #moon {
+        background: transparent;
+        border-radius: 100%;
+        box-shadow: -1vmin -1vmin 0 var(--clr4-light) inset;
+        height: 7vmin;
+        left: 35vmin;
+        position: absolute;
+        top: 10vmin;
+        width: 7vmin;
+      }
+
+      .mntn,
+      .mntn2,
+      .mntn::before,
+      .mntn::after,
+      .mntn2::after,
+      .mntn2::before {
+        border-radius: 5vmin;
+      }
+
+      .mntn {
+        background-color: var(--clr2);
+        height: 60vmin;
+        position: relative;
+        transform: rotate(45deg) translate(10vmin, 50vmin);
+        width: 60vmin;
+      }
+
+      .mntn::after {
+        background-color: var(--clr2-light);
+        content: '';
+        height: 80vmin;
+        position: absolute;
+        transform: translate(30vmin, -50vmin);
+        width: 80vmin;
+        z-index: 1;
+      }
+
+      .mntn::before {
+        background-color: var(--clr2-dark);
+        content: '';
+        height: 80vmin;
+        position: absolute;
+        transform: translate(10vmin, -20vmin);
+        width: 80vmin;
+        z-index: 2;
+      }
+
+      .mntn2 {
+        background-color: var(--clr3-dark);
+        height: 60vmin;
+        position: relative;
+        transform: rotate(45deg) translate(15vmin, -25vmin);
+        width: 60vmin;
+      }
+
+      .mntn2::after {
+        background-color: var(--clr3);
+        content: '';
+        height: 60vmin;
+        position: absolute;
+        transform: translate(-50vmin, 50vmin);
+        width: 60vmin;
+      }
+
+      .mntn2::before {
+        background-color: var(--clr3-light);
+        content: '';
+        height: 60vmin;
+        position: absolute;
+        transform: translate(-15vmin, 33vmin);
+        width: 60vmin;
+      }
+
+    </style>
+</head>
+<body>
+<div id="pstr">
+  <div id="star"></div>
+  <div id="moon">
+    <div class="mntn"></div>
+    <div class="mntn2"></div>
+  </div>
+</div>
+
+<script>
+  for (var i = 0; i < window.innerWidth / 6; i++) {
+    var s = Math.round(Math.random() * 4);
+    var x = Math.round(Math.random() * 100);
+    var y = Math.round(Math.random() * 100);
+    var o = Math.ceil((Math.random() * 100) / 20) * 20;
+    var c = Math.round(o * 2.5499999999999997) * 3;
+
+
+
+    $("#star").append(
+            $('<span>')
+                    .addClass('star')
+                    .css({
+                      width: s,
+                      height: s,
+                      top: y + '%',
+                      left: x + '%',
+                      background: 'rgb(' + 67 + ',' + 167 + ',' + c + ')',
+                      zIndex: o * 10
+                    })
+                    .data({
+                      x: x,
+                      y: y,
+                      o: o
+                    })
+    );
+  }
+
+  $(document).on('mousemove touchmove', function(e) {
+    if (Object.prototype.toString.call(e.originalEvent) === "[object TouchEvent]") {
+      e.clientX = e.originalEvent.touches[0].clientX;
+      e.clientY = e.originalEvent.touches[0].clientY;
+    }
+
+    var centerX = window.innerWidth / 2;
+    var centerY = window.innerHeight / 2;
+
+    $('.star').each(function() {
+      var curX = (centerX - e.clientX) / centerX * ($(this).data('o') / 100);
+      var curY = (centerY - e.clientY) / centerY * ($(this).data('o') / 100);
+
+      $(this).css({
+        top: $(this).data('y') - curY + '%',
+        left: $(this).data('x') - curX + '%'
+      })
+    });
+
+    return false;
+  })
+</script>
+</body>
+</html>
