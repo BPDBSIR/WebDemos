@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑客名称生成器</title>
+    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            margin:0;
+            font-family: 'VT323', ;
+            background:url('https://i.imgur.com/0qcVYoh.png');
+        }
+
+        #terminal {
+            position:relative;
+            top:100px;
+            margin:0 auto;
+            width:500px;
+            height:340px;
+            background:#d7d7d7;
+            border-radius:2px;
+            border:1px solid #222;
+            box-shadow:1px 1px #222,
+            inset 1px 1px #fff;
+            text-shadow:0 1px #ededed;
+        }
+
+        #terminal:before {
+            position:absolute;
+            top:6px;
+            left:6px;
+            width:16px;
+            height:16px;
+            background:linear-gradient(135deg, #b1b1b1, #d7d7d7);
+            border:1px solid #222;
+            box-shadow:inset 1px 1px #fff,
+            1px 1px #fff;
+            content:'';
+        }
+
+        #terminal:after {
+            position:absolute;
+            top:6px;
+            left:476px;
+            width:16px;
+            height:16px;
+            background:linear-gradient(135deg, #b1b1b1, #d7d7d7);
+            border:1px solid #222;
+            box-shadow:inset 1px 1px #fff,
+            1px 1px #fff;
+            content:'';
+        }
+
+        #window {
+            position:absolute;
+            padding:10px 20px;
+            top:30px;
+            left:10px;
+            width:440px;
+            height:280px;
+            background:#464646;
+            box-shadow:-1px -1px #b4b4b5,
+            1px 1px #fff;
+            font-size:28px;
+            color:#5fbb46;
+            content:'';
+            text-shadow:none;
+        }
+
+        #header {
+            color:#222;
+            text-align:center;
+            line-height:28px;
+            font-size:20px;
+        }
+
+        #header:before {
+            position:absolute;
+            top:6px;
+            left:30px;
+            width:175px;
+            height:1px;
+            background:#ebebeb;
+            box-shadow:0 1px #b7b7b8,
+            0 4px #ebebeb, 0 5px #b7b7b8,
+            0 8px #ebebeb, 0 9px #b7b7b8,
+            0 12px #ebebeb, 0 13px #b7b7b8,
+            0 16px #ebebeb, 0 17px #b7b7b8,
+            265px 0px #ebebeb, 265px 1px #b7b7b8,
+            265px 4px #ebebeb, 265px 5px #b7b7b8,
+            265px 8px #ebebeb, 265px 9px #b7b7b8,
+            265px 12px #ebebeb, 265px 13px #b7b7b8,
+            265px 16px #ebebeb, 265px 17px #b7b7b8;
+            content:'';
+        }
+
+        #topbar {
+            position:relative;
+            width:100vw;
+            height:30px;
+            background:#d7d7d7;
+            border:1px solid #222;
+            border-width: 1px 0 1px 0;
+            color:#222;
+            text-shadow:0 1px #ededed;
+            font-size:20px;
+            line-height:28px;
+            box-shadow:inset 0 1px #ededed;
+        }
+
+        #topbar:before {
+            float:right;
+            margin-right:15px;
+            content:'13:37';
+        }
+
+        #hackerName, #clear {
+            opacity:0;
+        }
+
+        cursor1, cursor2 {
+            animation-duration: 1s;
+            animation-name: blink;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes blink {
+            0% {opacity:1;}
+            49% {opacity:1;}
+            50% {opacity:0;}
+            100% {opacity:0;}
+        }
+    </style>
+</head>
+<body>
+<div id="topbar"><b>&nbsp;Computer</b>&nbsp;&nbsp;FILE&nbsp;&nbsp;EDIT&nbsp;&nbsp;HELP</div>
+<div id="terminal">
+    <div id="header">Terminal</div>
+    <div id="window">root@computer: Press &lt;ENTER&gt; to generate your hacker name<cursor1>_</cursor1><br><br>
+        <div id="hackerName">Hacker Name</div>
+        <div id="clear"><br>Press &lt;ENTER&gt; to clear<cursor2>_</cursor2></div>
+    </div>
+</div>
+<script>
+  var firstNames = ["1337", "t0xic", "phantom", "ALPhA", "v1rus", "biTe", "krypt0", "cyb3r", "Bi0", "acid", "gh0st", "Lord", "r4dical"];
+  var secondNames = ["PWNER", "H4X0R", "buRn", "MuX", "d3st0y3r", "phreak", "Plague", "0verride", "Chaos"];
+
+  var hackerNameVisible = 0;
+
+  document.onkeypress = function (e) {
+    e = e || window.event;
+    if (e.keyCode == 13) {
+      if (!hackerNameVisible) {
+        hackerNameVisible = 1;
+        var hackerName = getHackerName();
+        document.getElementById("window").getElementsByTagName("cursor1")[0].innerHTML = "";
+        document.getElementById("hackerName").innerHTML = hackerName;
+        document.getElementById("hackerName").style.opacity = 1;
+        document.getElementById("clear").style.opacity = 1;
+      } else {
+        hackerNameVisible = 0;
+        document.getElementById("hackerName").style.opacity = 0;
+        document.getElementById("clear").style.opacity = 0;
+        document.getElementById("window").getElementsByTagName("cursor1")[0].innerHTML = "_";
+      }
+    }
+  };
+
+  function getHackerName() {
+    var firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+    var secondName = secondNames[Math.floor(Math.random() * secondNames.length)];
+    return firstName + " " + secondName;
+  }
+</script>
+</body>
+</html>
