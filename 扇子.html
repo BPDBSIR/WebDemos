@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扇子</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      :root {
+        --size: 100;
+        --unit: calc((var(--size) / 100) * 1vmin);
+        --bg: #bec485;
+        --fan: #e1b253;
+        --shadow: #ba8f3a;
+        --crease: #1c1515;
+        --hold: #624616;
+        --hole: #634514;
+        --transparent: rgba(0, 0, 0, 0);
+      }
+
+      body {
+        background-color: var(--bg);
+      }
+
+      div {
+        height: calc(75 * var(--unit));
+        width: calc(90 * var(--unit));
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 50%);
+      }
+
+      div::before {
+        content: '';
+        display: block;
+
+        height: 100%;
+        width: 100%;
+
+        background:
+
+          /* Left */
+                linear-gradient(163deg, var(--fan) 50%, var(--crease) 51% 55%, var(--transparent) 55%) 96.3% 55.4% / 6% 1%,
+                linear-gradient(113deg, var(--fan) 50%, var(--crease) 51% 55%, var(--transparent) 54%) 94% 57.3% / 5% 2.7%,
+                linear-gradient(var(--hole), var(--hole)) 95.1% 56.9% / 4% 3.5%,
+
+                  /* Left */
+                linear-gradient(157deg, var(--shadow) 50%, var(--crease) 51% 55%, var(--transparent) 55%) 93.3% 40.8% / 6% 1%,
+                linear-gradient(105deg, var(--shadow) 50%, var(--crease) 51% 55%, var(--transparent) 54%) 91.5% 42.4% / 5% 2.7%,
+                  /* Right */
+                linear-gradient(96deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--fan) 54%) 94.9% 41.2% / 6% 2%,
+                linear-gradient(148deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--fan) 54%) 93% 43% / 5% 1.8%,
+                linear-gradient(var(--hole), var(--hole)) 92.1% 41.9% / 4% 3.5%,
+
+                  /* Left */
+                linear-gradient(142deg, var(--fan) 50%, var(--crease) 51% 55%, var(--transparent) 55%) 85.9% 28.8% / 6% 1.5%,
+                linear-gradient(98deg, var(--fan) 50%, var(--crease) 51% 55%, var(--transparent) 54%) 84.4% 30.6% / 5% 2.7%,
+                  /* Right */
+                linear-gradient(96deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--shadow) 54%) 86.9% 29.4% / 6% 2%,
+                linear-gradient(140deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--shadow) 54%) 85.5% 31.4% / 5% 1.8%,
+                linear-gradient(var(--hole), var(--hole)) 85.1% 29.9% / 4% 3.5%,
+
+                  /* Left */
+                linear-gradient(138deg, var(--shadow) 50%, var(--crease) 51% 55%, var(--transparent) 55%) 75.7% 18.5% / 6% 1.5%,
+                linear-gradient(87deg, var(--shadow) 50%, var(--crease) 51% 55%, var(--transparent) 54%) 74.8% 20.1% / 5% 2.7%,
+                  /* Right */
+                linear-gradient(90deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--fan) 54%) 76.9% 18.5% / 6% 2%,
+                linear-gradient(131deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--fan) 54%) 76% 20.4% / 5% 1.8%,
+                linear-gradient(var(--hole), var(--hole)) 76.1% 18.9% / 4% 3.5%,
+
+                  /* Left */
+                linear-gradient(122deg, var(--fan) 50%, var(--crease) 51% 55%, var(--transparent) 55%) 62.7% 15.5% / 6% 1.5%,
+                linear-gradient(82deg, var(--fan) 50%, var(--crease) 51% 55%, var(--transparent) 54%) 62.3% 17.1% / 5% 2.7%,
+                  /* Right */
+                linear-gradient(82deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--shadow) 54%) 63.7% 15.5% / 6% 2%,
+                linear-gradient(115deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--shadow) 54%) 63.4% 17.4% / 5% 1.7%,
+                linear-gradient(var(--hole), var(--hole)) 63.1% 15.9% / 4% 3.5%,
+
+                  /* MIDDLE */
+
+                  /* Left */
+                linear-gradient(121deg, var(--shadow) 50%, var(--crease) 51% 55%, var(--transparent) 55%) 49.5% 12.6% / 6% 2%,
+                linear-gradient(59deg, var(--shadow) 50%, var(--crease) 51% 55%, var(--transparent) 54%) 49.3% 14.1% / 5% 2.7%,
+                  /* Right */
+                linear-gradient(55deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--fan) 54%) 51% 12.5% / 6% 2%,
+                linear-gradient(121deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--fan) 54%) 51% 14.5% / 5% 2.5%,
+                linear-gradient(var(--hole), var(--hole)) 50.3% 12.9% / 4% 4%,
+
+                  /* Left */
+                linear-gradient(109deg, var(--fan) 50%, var(--crease) 51% 55%, var(--transparent) 55%) 36.5% 16.1% / 6% 2%,
+                linear-gradient(60deg, var(--fan) 50%, var(--crease) 51% 55%, var(--transparent) 54%) 37% 18.1% / 5% 2.6%,
+                  /* Right */
+                linear-gradient(55deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--shadow) 54%) 37.67% 16.1% / 6% 1.6%,
+                linear-gradient(99deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--shadow) 54%) 38.2% 17.8% / 5% 2.5%,
+                linear-gradient(var(--hole), var(--hole)) 37.5% 16.9% / 4% 3.5%,
+
+                  /* Left */
+                linear-gradient(99deg, var(--shadow) 50%, var(--crease) 51% 55%, var(--transparent) 55%) 24.1% 20.6% / 6% 2%,
+                linear-gradient(48deg, var(--shadow) 50%, var(--crease) 51% 55%, var(--transparent) 54%) 24.8% 22.2% / 5% 2.6%,
+                  /* Right */
+                linear-gradient(47deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--fan) 54%) 25.2% 20.2% / 6% 1.6%,
+                linear-gradient(88deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--fan) 54%) 26.2% 21.8% / 5% 2.7%,
+                linear-gradient(var(--hole), var(--hole)) 25.5% 21% / 4% 3.5%,
+
+                  /* Left */
+                linear-gradient(90deg, var(--fan) 50%, var(--crease) 51% 55%, var(--transparent) 55%) 14.4% 31.2% / 6% 2%,
+                linear-gradient(44deg, var(--fan) 50%, var(--crease) 51% 55%, var(--transparent) 54%) 16% 33.4% / 5% 2.6%,
+                  /* Right */
+                linear-gradient(31deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--shadow) 54%) 15.6% 30.8% / 6% 1.1%,
+                linear-gradient(78deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--shadow) 54%) 17.1% 32.4% / 5% 3.4%,
+                linear-gradient(var(--hole), var(--hole)) 16.5% 32% / 4% 4%,
+
+                  /* Left */
+                linear-gradient(83deg, var(--shadow) 50%, var(--crease) 51% 55%, var(--transparent) 55%) 7.1% 43.1% / 6% 2%,
+                linear-gradient(35deg, var(--shadow) 50%, var(--crease) 51% 55%, var(--transparent) 54%) 9.2% 45.4% / 5% 2.6%,
+                  /* Right */
+                linear-gradient(29deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--fan) 54%) 8.2% 42.5% / 6% 1.1%,
+                linear-gradient(65deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--fan) 54%) 10.2% 44.4% / 5% 3.4%,
+                linear-gradient(var(--hole), var(--hole)) 10% 44% / 4% 4%,
+
+                  /* Left */
+                linear-gradient(83deg, var(--fan) 50%, var(--crease) 51% 55%, var(--transparent) 55%) 4.4% 57.9% / 6% 2%,
+                linear-gradient(26deg, var(--fan) 50%, var(--crease) 51% 55%, var(--transparent) 54%) 6.5% 59.7% / 5% 2.6%,
+                  /* Right */
+                linear-gradient(23deg, var(--transparent) 50%, var(--crease) 51% 55%, var(--shadow) 55%) 5.8% 57.3% / 6% 1.1%,
+                linear-gradient(53deg, var(--transparent) 50%, var(--crease) 51% 54%, var(--shadow) 54%) 8.2% 59.4% / 5% 3.4%,
+                linear-gradient(var(--hole), var(--hole)) 7.6% 59% / 4% 4%,
+
+                repeating-conic-gradient(
+                        from 0deg at 50% 100%,
+                        var(--crease) 0deg 0.5deg,
+                        var(--fan) 0.5deg 10deg,
+                        var(--crease) 10deg 10.5deg,
+                        var(--shadow) 10.5deg 20deg
+                );
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        border: 2px solid var(--crease);
+        box-shadow: 0 0 2px var(--crease);
+      }
+
+      div::after {
+        content: '';
+        display: block;
+
+        height: 25%;
+        width: 100%;
+
+        position: absolute;
+        left: 50%;
+        top: 75%;
+        transform: translateX(-50%);
+
+        background: repeating-conic-gradient(
+                from 0deg at 50% 100%,
+                var(--crease) 0deg 0.5deg,
+                var(--hold) 1deg 10deg,
+                var(--crease) 10deg 10.5deg,
+                var(--hold) 11deg 20deg
+        );
+        background-repeat: no-repeat;
+        border-radius: 50%;
+      }
+
+    </style>
+</head>
+<body>
+  <div/>
+</body>
+</html>
