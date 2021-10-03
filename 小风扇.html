@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小风扇</title>
+    <style>
+      body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        background: radial-gradient(circle at top, rgba(255, 255, 255, 0.0001) 400px, #665b37) 50% 100%/100% calc(50% - 100px) no-repeat, linear-gradient(to bottom, rgba(255, 255, 255, 0.0001) calc(50% + 100px), #988752 calc(50% + 100px), #b9ab7d), linear-gradient(to top, rgba(255, 255, 255, 0.0001) calc(50% - 100px), rgba(0, 0, 0, 0.25) calc(50% - 100px), rgba(255, 255, 255, 0.0001) calc(50% + 100px)), radial-gradient(ellipse at 50% calc(50% + 100px), #f06864, #7c0f0c);
+      }
+      body div {
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.0001) calc(50% - 1px), #efefef calc(50% - 1px), #efefef calc(50% + 1px), rgba(255, 255, 255, 0.0001) calc(50% + 1px)) 50% 50%/215px 215px no-repeat, linear-gradient(to bottom, rgba(255, 255, 255, 0.0001) calc(50% - 1px), #efefef calc(50% - 1px), #efefef calc(50% + 1px), rgba(255, 255, 255, 0.0001) calc(50% + 1px)) 50% 50%/140px 140px no-repeat, radial-gradient(circle at center, rgba(255, 255, 255, 0.0001) 43px, #efefef 43px, #ccc 45px, rgba(255, 255, 255, 0.0001) 45px, rgba(255, 255, 255, 0.0001) 70px, #efefef 70px, #ccc 72px, rgba(255, 255, 255, 0.0001) 72px, rgba(255, 255, 255, 0.0001) 100px), radial-gradient(circle at center, #ccc, #fff 100px, #a4e2e2 100px, #a4e2e2 110px, #7dd6d6 110px);
+        position: relative;
+        transform-style: preserve-3d;
+        transform-origin: 50% 150% -100px;
+        -webkit-animation: turn 5s ease-in-out infinite alternate;
+        animation: turn 5s ease-in-out infinite alternate;
+      }
+      @-webkit-keyframes turn {
+        from {
+          transform: translateY(-100px) rotateY(-20deg);
+          box-shadow: 20px 0 0 #a4e2e2, 30px 30px 40px -30px #cbeeee, 60px 30px 0 -30px #91dcdc;
+        }
+        to {
+          transform: translateY(-100px) rotateY(20deg);
+          box-shadow: -20px 0 0 #a4e2e2, -30px 30px 40px -30px #cbeeee, -60px 30px 0 -30px #91dcdc;
+        }
+      }
+      @keyframes turn {
+        from {
+          transform: translateY(-100px) rotateY(-20deg);
+          box-shadow: 20px 0 0 #a4e2e2, 30px 30px 40px -30px #cbeeee, 60px 30px 0 -30px #91dcdc;
+        }
+        to {
+          transform: translateY(-100px) rotateY(20deg);
+          box-shadow: -20px 0 0 #a4e2e2, -30px 30px 40px -30px #cbeeee, -60px 30px 0 -30px #91dcdc;
+        }
+      }
+      body div:before, body div:after {
+        transform-style: preserve-3d;
+        content: "";
+        position: absolute;
+      }
+      body div:after {
+        transform-origin: 50% 100% 20px;
+        width: 100%;
+        height: 400px;
+        top: 0;
+        background: radial-gradient(circle at top, #efefef, #ccc 11.5px, #999 11.5px, #7dd6d6 12.5px, rgba(255, 255, 255, 0.0001) 15px) 50% 290px/40px 40px no-repeat, linear-gradient(to right, rgba(255, 255, 255, 0.0001) calc(50% - 12.5px), #ccc calc(50% - 12.5px), #efefef, #ccc calc(50% + 12.5px), rgba(255, 255, 255, 0.0001) calc(50% + 15px)) 100% 50%/100% 200px no-repeat, radial-gradient(ellipse at bottom, #def4f4, #a4e2e2 50%, rgba(255, 255, 255, 0.0001) 50%) 50% calc(100% - 60px)/120px 100px no-repeat, radial-gradient(ellipse at center, #def4f4, #a4e2e2 50%, rgba(255, 255, 255, 0.0001) 50%) 50% calc(100% - 30px)/120px 60px no-repeat, radial-gradient(ellipse at center, #7dd6d6 65%, rgba(255, 255, 255, 0.0001) 50%) 50% 340px/250px 30px no-repeat, linear-gradient(to top, #a4e2e2 30px, rgba(255, 255, 255, 0.0001) 20px) 50% calc(50% - 15px)/calc(100% - 20px) 100% no-repeat, radial-gradient(ellipse at center, #a4e2e2 65%, rgba(255, 255, 255, 0.0001) 50%) 50% 370px/250px 30px no-repeat;
+        -webkit-animation: donotturn 5s ease-in-out infinite alternate;
+        animation: donotturn 5s ease-in-out infinite alternate;
+        -webkit-box-reflect: below -30px linear-gradient(rgba(255, 255, 255, 0.0001) 50%, rgba(255, 255, 255, 0.25));
+      }
+      @-webkit-keyframes donotturn {
+        from {
+          transform: translateZ(-120px) rotateY(25deg);
+        }
+        to {
+          transform: translateZ(-120px) rotateY(-25deg);
+        }
+      }
+      @keyframes donotturn {
+        from {
+          transform: translateZ(-120px) rotateY(25deg);
+        }
+        to {
+          transform: translateZ(-120px) rotateY(-25deg);
+        }
+      }
+      body div:before {
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0.0001) 43px, #efefef 43px, #ccc 45px, rgba(255, 255, 255, 0.0001) 45px, rgba(255, 255, 255, 0.0001) 70px, #efefef 70px, #ccc 72px, rgba(255, 255, 255, 0.0001) 72px, rgba(255, 255, 255, 0.0001) 100px, #efefef 100px, #ccc 102px, rgba(255, 255, 255, 0.0001) 102px), radial-gradient(circle at center, #ccc, #dfdfdf 25px, rgba(255, 255, 255, 0.0001) 20px), linear-gradient(95deg, rgba(255, 255, 255, 0.0001) calc(50% - 10px), #ccc calc(50% - 10px), #ccc calc(50% + 10px), rgba(255, 255, 255, 0.0001) calc(50% + 10px)) 50%/100% 75% no-repeat, linear-gradient(-95deg, rgba(255, 255, 255, 0.0001) calc(50% - 10px), #ccc calc(50% - 10px), #ccc calc(50% + 10px), rgba(255, 255, 255, 0.0001) calc(50% + 10px)) 50%/100% 75% no-repeat, linear-gradient(5deg, rgba(255, 255, 255, 0.0001) calc(50% - 10px), #ccc calc(50% - 10px), #ccc calc(50% + 10px), rgba(255, 255, 255, 0.0001) calc(50% + 10px)) 50%/75% 100% no-repeat, linear-gradient(-5deg, rgba(255, 255, 255, 0.0001) calc(50% - 10px), #ccc calc(50% - 10px), #ccc calc(50% + 10px), rgba(255, 255, 255, 0.0001) calc(50% + 10px)) 50%/75% 100% no-repeat, radial-gradient(circle at bottom, #ccc 20px, rgba(255, 255, 255, 0.0001) 20px) 50% 0px/35px 35px no-repeat, radial-gradient(circle at top, #ccc 20px, rgba(255, 255, 255, 0.0001) 20px) 50% 100%/35px 35px no-repeat, radial-gradient(circle at right, #ccc 20px, rgba(255, 255, 255, 0.0001) 20px) 0% 50%/35px 35px no-repeat, radial-gradient(circle at left, #ccc 20px, rgba(255, 255, 255, 0.0001) 20px) 100% 50%/35px 35px no-repeat;
+        -webkit-animation: spin 0.5s linear infinite;
+        animation: spin 0.5s linear infinite;
+      }
+      @-webkit-keyframes spin {
+        from {
+          transform: scale(0.9) translateZ(50px) rotate(0deg);
+        }
+        to {
+          transform: scale(0.9) translateZ(50px) rotate(360deg);
+        }
+      }
+      @keyframes spin {
+        from {
+          transform: scale(0.9) translateZ(50px) rotate(0deg);
+        }
+        to {
+          transform: scale(0.9) translateZ(50px) rotate(360deg);
+        }
+      }
+    </style>
+</head>
+<body>
+  <div/>
+</body>
+</html>
